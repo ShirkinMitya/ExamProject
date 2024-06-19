@@ -14,7 +14,6 @@ public class Ship {
         this.pathSegmentIndex = 0;
         this.segmentTacts = 0;
         this.CurentSegmentTakts = 0;
-
     }
 
     public void setGoesDown(boolean goesDown) {

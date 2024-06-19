@@ -14,5 +14,12 @@ public class Route {
         shipList.add(new Ship(true));
     }
 
-    
+    public List<Ship> getShipList() {
+        return shipList;
+    }
+
+    public List<PathSegment> getPath() {
+        return path;
+    }
+
 }
