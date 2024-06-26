@@ -23,15 +23,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <Component id="Panel" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
+          <Component id="Panel" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="Panel" alignment="1" max="32767" attributes="0"/>
+          <Component id="Panel" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -41,69 +38,57 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="ScrollPane" min="-2" pref="329" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="LabelTactsNumberInfo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="LabelNubmerOfTacts" min="-2" pref="72" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="ComboBoxTypeOfWork" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelTypeOfWork" min="-2" max="-2" attributes="0"/>
+                      <Component id="ButtonStartStop" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
+                      <Component id="ButtonNextTact" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
+                      <Component id="ButtonReset" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="0" pref="77" max="32767" attributes="0"/>
+              </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="ButtonExit" min="-2" pref="82" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ScrollPane" min="-2" pref="457" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="ButtonNextTact" min="-2" max="-2" attributes="0"/>
-                              <Component id="ButtonStartStop" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                          <Component id="ComboBoxDirection" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="ComboBoxTypeOfWork" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="LabelTactsNumberInfo" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="LabelNubmerOfTacts" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <EmptySpace pref="141" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                          <Component id="ButtonExit" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Component id="ScrollPane" min="-2" pref="636" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="ButtonExit" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="LabelTypeOfWork" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="ComboBoxTypeOfWork" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="ComboBoxDirection" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="ButtonStartStop" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="ButtonNextTact" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="LabelTactsNumberInfo" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="LabelNubmerOfTacts" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="ButtonStartStop" min="-2" pref="38" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="ButtonNextTact" min="-2" pref="37" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="ButtonReset" min="-2" pref="44" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="LabelNubmerOfTacts" min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="LabelTactsNumberInfo" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <Component id="ScrollPane" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="37" max="32767" attributes="0"/>
+                  <EmptySpace pref="79" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -113,6 +98,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x412;&#x44b;&#x445;&#x43e;&#x434;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonExitActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="ScrollPane">
 
@@ -128,7 +116,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="ButtonNextTact">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#x421;&#x43b;&#x435;&#x434;.&#x442;&#x430;&#x43a;&#x442;"/>
+            <Property name="text" type="java.lang.String" value="&#x421;&#x43b;&#x435;&#x434;&#x443;&#x44e;&#x449;&#x438;&#x439; &#x442;&#x430;&#x43a;&#x442;"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonNextTactActionPerformed"/>
@@ -137,11 +125,9 @@
         <Component class="javax.swing.JComboBox" name="ComboBoxTypeOfWork">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="&#x420;&#x443;&#x447;&#x43d;&#x430;&#x44f; "/>
-                <StringItem index="1" value="&#x410;&#x432;&#x442;&#x43e;&#x43c;&#x430;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43a;&#x430;&#x44f;"/>
-                <StringItem index="2" value=" "/>
-                <StringItem index="3" value=" "/>
+              <StringArray count="2">
+                <StringItem index="0" value="&#x420;&#x443;&#x447;&#x43d;&#x43e;&#x439;"/>
+                <StringItem index="1" value="&#x410;&#x432;&#x442;&#x43e;&#x43c;&#x430;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43a;&#x438;&#x439;"/>
               </StringArray>
             </Property>
           </Properties>
@@ -152,29 +138,25 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="ComboBoxDirection">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="&#x43e;&#x442; &#x41c;&#x421;&#x41a;"/>
-                <StringItem index="1" value="&#x43e;&#x442; &#x421;&#x41f;&#x411;"/>
-                <StringItem index="2" value=" "/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
         <Component class="javax.swing.JLabel" name="LabelTactsNumberInfo">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#x41a;&#x43e;&#x43b;&#x432;&#x43e; &#x442;&#x430;&#x43a;&#x441;&#x442;&#x43e;&#x432;:"/>
+            <Property name="text" type="java.lang.String" value="&#x41a;&#x43e;&#x43b;-&#x432;&#x43e; &#x442;&#x430;&#x43a;&#x442;&#x43e;&#x432;:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="LabelNubmerOfTacts">
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelTypeOfWork">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel1"/>
+            <Property name="text" type="java.lang.String" value="&#x422;&#x438;&#x43f; &#x440;&#x430;&#x431;&#x43e;&#x442;&#x44b; &#x43f;&#x440;&#x43e;&#x433;&#x440;&#x430;&#x43c;&#x43c;&#x44b;:"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="ButtonReset">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x421;&#x431;&#x440;&#x43e;&#x441;&#x438;&#x442;&#x44c; &#x43f;&#x440;&#x43e;&#x433;&#x440;&#x435;&#x441;&#x441;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonResetActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

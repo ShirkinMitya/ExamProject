@@ -13,10 +13,22 @@ public class Sluice extends PathSegment {
 
     @Override
     int getLength(Ship ship) {
-        if (ship.isGoesDown()!= this.isDown) {
-            return 18;
-        } else {
+        if (ship.isGoesDown() != this.isDown) {
             return 13;
+        } else {
+            return 18;
         }
     }
+
+    @Override
+    void reset() {
+        this.isDown = new Random().nextBoolean();
+    }
+
+    @Override
+    public String toString() {
+        String status = isDown ? "(Камера спущена)" : "(Камера наполнена)";
+        return getName() + " " + status;
+    }
+
 }

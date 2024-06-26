@@ -1,48 +1,82 @@
 package Service;
 
-import Models.PathSegment;
 import Models.Route;
-import Models.Ship;
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.util.HashSet;
-import java.util.Set;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Manager {
 
+    Mediator mediator;
     private Route route;
+    private Timer timer;
+    private boolean isManual = true;
+    private boolean runningAutomatically;
 
     public Manager() {
         this.route = new Route();
     }
 
-    public JPanel createPathSegmentPanel() {
-        Set<Integer> shipIndexes = new HashSet<>();
-        for (Ship ship : route.getShipList()) {
-            shipIndexes.add(ship.getPathSegmentIndex());
+    public void toggleRunning() {
+        if (isManual) {
+            return;
         }
-        JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
-        JLabel labelStart = new JLabel("CП");
-        labelStart.setOpaque(true);
-        panel.add(labelStart);
-        for (int i = 0; i < route.getPath().size(); i++) {
-            PathSegment segment = route.getPath().get(i);
-            JLabel label = new JLabel(segment.getName());
-            label.setOpaque(true);
-            if (shipIndexes.contains(i)) {
-                label.setBackground(Color.RED);
-            } else {
-                label.setBackground(Color.YELLOW);
+        runningAutomatically = !runningAutomatically;
+        if (runningAutomatically) {
+            startTimer();
+        } else {
+            stopTimer();
+        }
+    }
+
+    private void startTimer() {
+        timer = new Timer();
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                nextTact();
             }
-            panel.add(label);
+        };
+        timer.scheduleAtFixedRate(task, 0, 150);
+    }
+
+    private void stopTimer() {
+        if (timer != null) {
+            timer.cancel();
         }
-        JLabel labelfinish = new JLabel("CП");
-        labelfinish.setOpaque(true);
-        panel.add(labelfinish);
-        return panel;
+    }
+
+    public void nextTact() {
+        boolean end = route.nextTact();
+        mediator.updateGui(route);
+        if (end) {
+            stopTimer();
+            mediator.EndMessege(route.getTotalTacts());
+            reset();
+        }
+    }
+
+    public void reset() {
+        route.reset();
+        mediator.updateGui(route);
+        runningAutomatically = false;
+        stopTimer();
+    }
+
+    public void setTypeOfWork(boolean isManual) {
+        if(isManual){
+            stopTimer();
+        }
+        runningAutomatically = false;
+        this.isManual = isManual;
+    }
+
+    public void setMediator(Mediator mediator) {
+        this.mediator = mediator;
+        mediator.updateGui(route);
+    }
+
+    public boolean isIsManual() {
+        return isManual;
     }
 
 }
