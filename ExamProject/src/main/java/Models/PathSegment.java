@@ -9,7 +9,7 @@ public abstract class PathSegment {
     }
 
     abstract int getLength(Ship ship);
-    
+
     abstract void reset();
 
     public String getName() {

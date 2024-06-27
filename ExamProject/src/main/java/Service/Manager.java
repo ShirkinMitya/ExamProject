@@ -50,7 +50,8 @@ public class Manager {
         mediator.updateGui(route);
         if (end) {
             stopTimer();
-            mediator.EndMessege(route.getTotalTacts());
+            mediator.EndMessage(route.getShipList().stream().map(s -> s.getTotalTacts()).toList(), 
+                    route.getTotalTacts());
             reset();
         }
     }
@@ -63,7 +64,7 @@ public class Manager {
     }
 
     public void setTypeOfWork(boolean isManual) {
-        if(isManual){
+        if (isManual) {
             stopTimer();
         }
         runningAutomatically = false;

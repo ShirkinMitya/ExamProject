@@ -9,11 +9,11 @@ public class Ship {
     private int segmentTacts;
     private int curentSegmentTacts;
 
-    public Ship(boolean goesDown) {
+    public Ship(boolean goesDown, int segmentIndex) {
         this.endPath = false;
         this.goesDown = goesDown;
         this.totalTacts = 0;
-        this.pathSegmentIndex = 0;
+        this.pathSegmentIndex = segmentIndex;
         this.segmentTacts = 0;
         this.curentSegmentTacts = 0;
     }

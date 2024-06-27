@@ -5,8 +5,10 @@ import Models.PathSegment;
 import Models.Route;
 import Models.Ship;
 import java.awt.Color;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -25,10 +27,18 @@ public class Mediator {
     }
 
     private JPanel createPathSegmentPanel(Route route) {
-        Set<Integer> shipIndexes = new HashSet<>();
+        Map<Integer, List<Ship>> shipIndexes = new HashMap<>();
         for (Ship ship : route.getShipList()) {
             if (!ship.isEndPath()) {
-                shipIndexes.add(ship.getPathSegmentIndex());
+                int indexofShip = ship.getPathSegmentIndex();
+                if (shipIndexes.containsKey(indexofShip)) {
+                    List<Ship> shipList = shipIndexes.get(indexofShip);
+                    shipList.add(ship);
+                    continue;
+                }
+                List<Ship> shipList = new ArrayList<>();
+                shipList.add(ship);
+                shipIndexes.put(indexofShip, shipList);
             }
         }
         JPanel panel = new JPanel();
@@ -39,8 +49,13 @@ public class Mediator {
             PathSegment segment = route.getPath().get(i);
             JLabel label = new JLabel(segment.toString());
             label.setOpaque(true);
-            if (shipIndexes.contains(i)) {
-                label.setBackground(Color.RED);
+            if (shipIndexes.containsKey(i)) {
+                List<Ship> shipList = shipIndexes.get(i);
+                if (shipList.size() > 1) {
+                    label.setBackground(Color.BLUE);
+                } else {
+                    label.setBackground(shipList.get(0).isGoesDown() ? Color.RED : Color.GREEN);
+                }
             } else {
                 label.setBackground(Color.YELLOW);
             }
@@ -51,8 +66,8 @@ public class Mediator {
         return panel;
     }
 
-    public void EndMessege(int numberOfTacts) {
-        gui.EndMessage(numberOfTacts);
+    public void EndMessage(List<Integer> totalTactsForEachShip, int totalTacts) {
+        gui.endMessage(totalTacts, totalTactsForEachShip);
     }
 
 }
